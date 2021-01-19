@@ -52,8 +52,8 @@ app.post('/journeybuilder/execute/', activity.execute );
   headers: {'content-type' : 'application/json'},
   url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
   body:    {
-        "client_id": "4nfraga57ld98tn00rmrhbn9",
-        "client_secret":"qlm3OG67VzLC6nekeeGo1XY2" , 
+        "client_id": "9ghxj79pidh4qdxgv90wabo2",
+        "client_secret":"kA6hKrEI8FfJmeCA5YZi2BdZ" , 
         "grant_type": "client_credentials"
 },
      json: true
