@@ -27,6 +27,15 @@
     
     
     <style type="text/css">
+	    .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
         body {
             padding: 20px;
             margin: 0;
@@ -177,7 +186,7 @@
 	
 	
 <div id="step3" class="step">
-<div class="slds-text-heading_small instruction" style="cursor: not-allowed;">Create a message:</div>
+<div class="slds-text-heading_small instruction noselect" id="heading" >Create a message:</div>
 
     <br><br>
     <div class="sample-toolbar">
@@ -284,6 +293,7 @@ var span = document.getElementsByClassName("close")[0];
 		}
 		
 		function insertTextAtCaret(text) {
+			document.getElementById("heading").classList.add("slds-text-heading_small instruction noselect");
 		    var sel, range;
 		    if (window.getSelection) 
 		    {
