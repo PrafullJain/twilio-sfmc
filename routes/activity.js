@@ -237,7 +237,7 @@ exports.execute = function(req, res) {
         .create({
             body: smsMessage,
             statusCallback: "https://encwq9bqo98l04z.m.pipedream.net/",
-            from: '+12058914350',
+            from: '+12526514589',
             to: '+91' + to
         },
           function(err, responseData){
@@ -274,8 +274,8 @@ exports.execute = function(req, res) {
         headers: {'content-type' : 'application/json'},
         url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
         body:    {
-                    'client_id': '4nfraga57ld98tn00rmrhbn9',
-                    'client_secret': 'qlm3OG67VzLC6nekeeGo1XY2',
+                    'client_id': '9ghxj79pidh4qdxgv90wabo2',
+                    'client_secret': 'kA6hKrEI8FfJmeCA5YZi2BdZ',
                     'grant_type': 'client_credentials'
     },
         json: true
@@ -291,7 +291,7 @@ exports.execute = function(req, res) {
    //var request = require('request');
   request.post({
   headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
-  url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:36B87A1F-3606-46F2-BDB8-58DF209F1EDF/rows',
+  url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:8E7B1A82-590E-4CFD-A52A-E34962B1EAAC/rows',
   body:    {
    "items":
 [
