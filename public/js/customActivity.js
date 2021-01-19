@@ -354,7 +354,7 @@ define([
             "messagingService": messagingService,
             "to": "{{Event." + eventDefinitionKey + ".TwilioNumber}}",//<----This should map to your data extension name and phone number column
             "SMS": sms,
-            "email":"{{Event." + eventDefinitionKey + ".EmailAddress}}",
+            "email":"{{Event." + eventDefinitionKey + ". Email}}",
             "WhatsApp": whatsappsms,
             "MessageBody": messagebody,
             "SmsMessage" : smsMessageBody,
