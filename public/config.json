@@ -15,11 +15,11 @@
     "arguments": {
         "execute": {
             "inArguments": [{
-                "email": "{{Contact.Attribute.TwilioV1.EmailAddress}}",
-                "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}"
+                "email": "{{Contact.Attribute.TwilioDE.Email}}",
+                "to": "{{Contact.Attribute.TwilioDE.TwilioNumber}}"
             }],
             "outArguments": [],
-            "url": "https://twilio-sfmc-sakshi.herokuapp.com/journeybuilder/execute",
+            "url": "https://twilioappexchange.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -70,7 +70,7 @@
     ],
     "userInterfaces": {
         "configModal": {
-            "height": 450,
+            "height": 430,
             "width": 700,
             "fullscreen": false
         }
