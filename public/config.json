@@ -15,7 +15,7 @@
     "arguments": {
         "execute": {
             "inArguments": [{
-                "email": "{{Contact.Attribute.TwilioDE.Email}}",
+                "email": "{{Contact.Default.Email}}",
                 "to": "{{Contact.Attribute.TwilioDE.TwilioNumber}}"
             }],
             "outArguments": [],
