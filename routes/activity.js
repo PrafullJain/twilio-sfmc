@@ -87,7 +87,7 @@ exports.save = function(req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = function(req, res) {
+exports.execute = function (req, res) {
 
     console.log("5 -- For Execute");
     console.log("4");
@@ -100,230 +100,229 @@ exports.execute = function(req, res) {
 
     const accountSid = requestBody.accountSid;
     const authToken = requestBody.authToken;
-    const to ='+91'+requestBody.to;
-   // const from = requestBody.messagingService;
-    const sms =   requestBody.SMS;
+    const to = '+91' + requestBody.to;
+    // const from = requestBody.messagingService;
+    const sms = requestBody.SMS;
     const whatsapp = requestBody.WhatsApp;
     const messagebody = requestBody.MessageBody;
     const smsMessage = requestBody.SmsMessage;
-    const wPmessage  = requestBody.WPmessage;
-    const imageURL = requestBody.insertedImage ; 
-    console.log("RequestBody"+JSON.stringify(requestBody));
-    const email = requestBody.email; 
-    const entrySource = requestBody.entrySource; 
-    
-   // console.log({{Contact.Attribute.TwilioV1.TwilioNumber}});
-   // console.log({{Contact.Attribute.TwilioV1.EmailAddress}});
-    
-    
-    
+    const wPmessage = requestBody.WPmessage;
+    const imageURL = requestBody.insertedImage;
+    console.log("RequestBody" + JSON.stringify(requestBody));
+    const email = requestBody.email;
+    const entrySource = requestBody.entrySource;
+
+    // console.log({{Contact.Attribute.TwilioV1.TwilioNumber}});
+    // console.log({{Contact.Attribute.TwilioV1.EmailAddress}});
+
+
+
     console.log("Entry source--------->" + entrySource);
-   // console.log("imageurl---------------------------------------------------------------------------------->" + imageURL);
+    // console.log("imageurl---------------------------------------------------------------------------------->" + imageURL);
     console.log("Original message body with html formatting--------->" + messagebody);
     console.log("Whatsapp message--------------->" + wPmessage);
     console.log("SMS message--------------->" + smsMessage);
-    
-    
-    if(whatsapp == true)
-    {
-        
+
+
+    if (whatsapp == true) {
+
         console.log("<---------------------------------------------------This message is sent on whatsApp number of the user--------------------------------------------------->");
         console.log("Whatsapp message----------->" + wPmessage);
+
+
+        /* const client = require('twilio')(accountSid, authToken);
+         console.log(to);
+         client.messages
+         .create({
+             mediaurl: ImageURL,
+             body: "hello there, this is my first whatsapp message",
+             from: 'whatsapp:+14155238886',
+             to: 'whatsapp:+91' + to
+         },
+         function(err, responseData){
+         if(!err) {
+         console.log(responseData);
+         console.log(responseData.accountSid); 
+         console.log(responseData.apiVersion);
+         console.log(responseData.body); 
+         console.log(responseData.from); 
+         console.log(responseData.sid);
+         console.log(responseData.status);
+         console.log(responseData.to);
+         console.log(responseData.direction); 
+         console.log(responseData.errorCode); 
+         console.log(responseData.errorMessage);
+             
+             
+         var accountSid = responseData.accountSid;
+         var apiVersion = responseData.apiVersion;
+         var body = responseData.body;
+         var from = responseData.from;
+         var sid = responseData.sid;
+         var status = responseData.status;
+         var to = responseData.to;
+         var direction = responseData.direction;
+         var errorCode = responseData.errorCode;
+         var errorMessage = responseData.errorMessage;
+         
+             
+         const https = require('https');
+         console.log("we are trying to get the authorization token here");
+         var request = require('request');
+         request.post({
+         headers: {'content-type' : 'application/json'},
+         url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
+         body:    {
+                     'client_id': '4nfraga57ld98tn00rmrhbn9',
+                     'client_secret': 'qlm3OG67VzLC6nekeeGo1XY2',
+                     'grant_type': 'client_credentials'
+     },
+         json: true
+ }, function(error, response, body){
+      var access_token = body.access_token;
+      console.log("Access------>"+body.access_token);
+      console.log("access_token------>" + access_token);
+      console.log("Response------->"+response);
+      console.log("Error----->"+error);
+      
+    //const https = require('https');
+     console.log("we are calling out the api to insert row in DE");
+    //var request = require('request');
+   request.post({
+   headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
+   url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:36B87A1F-3606-46F2-BDB8-58DF209F1EDF/rows',
+   body:    {
+    "items":
+ [
+     {
+        // 'accountSid':accountSid,
+        // 'apiVersion':apiVersion,
+        // 'body':body,
+        // 'from': from,
+           'sid':sid
+       //  'status': status,
+      //   'to': to
+        // 'direction' : direction,
+        // 'errorCode' : errorCode,
+        // 'errorMessage' : errorMessage
+ }]
+ },
+      json: true
+ }, function(error, response, body){
+     console.log("requestId---------->"+body.requestId);
+     console.log("body--------->"+body);
+     console.log("response--------->"+response);
+     console.log("error-------->"+error);
+    
         
-        
-       /* const client = require('twilio')(accountSid, authToken);
+ });
+ });
+ //console.log("we have inserted the tracking data in to the DE");
+                     
+         } } ); */
+
+
+
+    }
+
+
+
+    if (sms == true) {
+        console.log("<---------------------------------------------------This message is sent as SMS-------------------------------------------------->");
+        const client = require('twilio')(accountSid, authToken);
         console.log(to);
         client.messages
-        .create({
-            mediaurl: ImageURL,
-            body: "hello there, this is my first whatsapp message",
-            from: 'whatsapp:+14155238886',
-            to: 'whatsapp:+91' + to
-        },
-        function(err, responseData){
-        if(!err) {
-        console.log(responseData);
-        console.log(responseData.accountSid); 
-        console.log(responseData.apiVersion);
-        console.log(responseData.body); 
-        console.log(responseData.from); 
-        console.log(responseData.sid);
-        console.log(responseData.status);
-        console.log(responseData.to);
-        console.log(responseData.direction); 
-        console.log(responseData.errorCode); 
-        console.log(responseData.errorMessage);
-            
-            
-        var accountSid = responseData.accountSid;
-        var apiVersion = responseData.apiVersion;
-        var body = responseData.body;
-        var from = responseData.from;
-        var sid = responseData.sid;
-        var status = responseData.status;
-        var to = responseData.to;
-        var direction = responseData.direction;
-        var errorCode = responseData.errorCode;
-        var errorMessage = responseData.errorMessage;
-        
-            
-        const https = require('https');
-        console.log("we are trying to get the authorization token here");
-        var request = require('request');
-        request.post({
-        headers: {'content-type' : 'application/json'},
-        url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
-        body:    {
-                    'client_id': '4nfraga57ld98tn00rmrhbn9',
-                    'client_secret': 'qlm3OG67VzLC6nekeeGo1XY2',
-                    'grant_type': 'client_credentials'
-    },
-        json: true
-}, function(error, response, body){
-     var access_token = body.access_token;
-     console.log("Access------>"+body.access_token);
-     console.log("access_token------>" + access_token);
-     console.log("Response------->"+response);
-     console.log("Error----->"+error);
-     
-   //const https = require('https');
-    console.log("we are calling out the api to insert row in DE");
-   //var request = require('request');
-  request.post({
-  headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
-  url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:36B87A1F-3606-46F2-BDB8-58DF209F1EDF/rows',
-  body:    {
-   "items":
-[
-    {
-       // 'accountSid':accountSid,
-       // 'apiVersion':apiVersion,
-       // 'body':body,
-       // 'from': from,
-          'sid':sid
-      //  'status': status,
-     //   'to': to
-       // 'direction' : direction,
-       // 'errorCode' : errorCode,
-       // 'errorMessage' : errorMessage
-}]
-},
-     json: true
-}, function(error, response, body){
-    console.log("requestId---------->"+body.requestId);
-    console.log("body--------->"+body);
-    console.log("response--------->"+response);
-    console.log("error-------->"+error);
-   
-       
-});
-});
-//console.log("we have inserted the tracking data in to the DE");
-                    
-        } } ); */
-        
-       
-    
+            .create({
+                body: smsMessage,
+                statusCallback: "https://encwq9bqo98l04z.m.pipedream.net/",
+                from: '+12526514589',
+                to: to
+            },
+                function (err, responseData) {
+                    if (!err) {
+                        console.log(responseData);
+                        console.log(responseData.accountSid);
+                        console.log(responseData.apiVersion);
+                        console.log(responseData.body);
+                        console.log(responseData.from);
+                        console.log(responseData.sid);
+                        console.log(responseData.status);
+                        console.log(responseData.to);
+                        console.log(responseData.direction);
+                        console.log(responseData.errorCode);
+                        console.log(responseData.errorMessage);
+
+
+                        var accountSid = responseData.accountSid;
+                        var apiVersion = responseData.apiVersion;
+                        var body = responseData.body;
+                        var from = responseData.from;
+                        var sid = responseData.sid;
+                        var status = responseData.status;
+                        var to = responseData.to;
+                        var direction = responseData.direction;
+                        var errorCode = responseData.errorCode;
+                        var errorMessage = responseData.errorMessage;
+
+                        /*
+                        const https = require('https');
+                        console.log("we are trying to get the authorization token here");
+                        var request = require('request');
+                        request.post({
+                            headers: { 'content-type': 'application/json' },
+                            url: 'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
+                            body: {
+                                'client_id': '9ghxj79pidh4qdxgv90wabo2',
+                                'client_secret': 'kA6hKrEI8FfJmeCA5YZi2BdZ',
+                                'grant_type': 'client_credentials'
+                            },
+                            json: true
+                        }, function (error, response, body) {
+                            var access_token = body.access_token;
+                            console.log("Access------>" + body.access_token);
+                            console.log("access_token------>" + access_token);
+                            console.log("Response------->" + response);
+                            console.log("Error----->" + error);
+
+                            //const https = require('https');
+                            console.log("we are calling out the api to insert row in DE");
+                            //var request = require('request');
+                            request.post({
+                                headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + access_token },
+                                url: 'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:8E7B1A82-590E-4CFD-A52A-E34962B1EAAC/rows',
+                                body: {
+                                    "items":
+                                        [
+                                            {
+                                                'sid': sid,
+                                                // 'accountSid':accountSid,
+                                                // 'apiVersion':apiVersion,
+                                                // 'body':body,
+                                                'from': from,
+                                                'status': status,
+                                                'to': to,
+                                                'direction': direction,
+                                                'errorCode': errorCode,
+                                                'errorMessage': errorMessage
+                                            }]
+                                },
+                                json: true
+                            }, function (error, response, body) {
+                                console.log("requestId---------->" + body.requestId);
+                                console.log("body--------->" + body);
+                                console.log("response--------->" + response);
+                                console.log("error-------->" + error);
+
+
+                            });
+                        });
+                        //console.log("we have inserted the tracking data in to the DE");
+                        */
+                    }
+                });
+
     }
-   
-    
-    
-    if(sms == true)
-    {
-        console.log("<---------------------------------------------------This message is sent as SMS-------------------------------------------------->");
-    const client = require('twilio')(accountSid, authToken);
-    console.log(to);
-    client.messages
-        .create({
-            body: smsMessage,
-            statusCallback: "https://encwq9bqo98l04z.m.pipedream.net/",
-            from: '+12526514589',
-            to: to
-        },
-          function(err, responseData){
-        if(!err) {
-        console.log(responseData);
-        console.log(responseData.accountSid); 
-        console.log(responseData.apiVersion);
-        console.log(responseData.body); 
-        console.log(responseData.from); 
-        console.log(responseData.sid);
-        console.log(responseData.status);
-        console.log(responseData.to);
-        console.log(responseData.direction); 
-        console.log(responseData.errorCode); 
-        console.log(responseData.errorMessage);
-            
-            
-        var accountSid = responseData.accountSid;
-        var apiVersion = responseData.apiVersion;
-        var body = responseData.body;
-        var from = responseData.from;
-        var sid = responseData.sid;
-        var status = responseData.status;
-        var to = responseData.to;
-        var direction = responseData.direction;
-        var errorCode = responseData.errorCode;
-        var errorMessage = responseData.errorMessage;
-        
-            
-        const https = require('https');
-        console.log("we are trying to get the authorization token here");
-        var request = require('request');
-        request.post({
-        headers: {'content-type' : 'application/json'},
-        url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
-        body:    {
-                    'client_id': '9ghxj79pidh4qdxgv90wabo2',
-                    'client_secret': 'kA6hKrEI8FfJmeCA5YZi2BdZ',
-                    'grant_type': 'client_credentials'
-    },
-        json: true
-}, function(error, response, body){
-     var access_token = body.access_token;
-     console.log("Access------>"+body.access_token);
-     console.log("access_token------>" + access_token);
-     console.log("Response------->"+response);
-     console.log("Error----->"+error);
-     
-   //const https = require('https');
-    console.log("we are calling out the api to insert row in DE");
-   //var request = require('request');
-  request.post({
-  headers: {'content-type' : 'application/json','Authorization': 'Bearer ' + access_token},
-  url:     'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/data/v1/async/dataextensions/key:8E7B1A82-590E-4CFD-A52A-E34962B1EAAC/rows',
-  body:    {
-   "items":
-[
-    {
-        'sid':sid,
-       // 'accountSid':accountSid,
-       // 'apiVersion':apiVersion,
-       // 'body':body,
-        'from': from,
-        'status': status,
-        'to': to,
-        'direction' : direction,
-        'errorCode' : errorCode,
-        'errorMessage' : errorMessage
-}]
-},
-     json: true
-}, function(error, response, body){
-    console.log("requestId---------->"+body.requestId);
-    console.log("body--------->"+body);
-    console.log("response--------->"+response);
-    console.log("error-------->"+error);
-   
-       
-});
-});
-//console.log("we have inserted the tracking data in to the DE");
-                    
-        } } );
-        
-    }
-        
+
     logData(req);
     res.send(200, 'Execute');
 };
