@@ -82,70 +82,70 @@
                         "accountSid": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "authToken": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "from": {
                             "dataType": "Phone",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "to": {
                             "dataType": "Phone",
                             "isNullable": false,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "MessageBody": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "email": {
                             "dataType": "Email",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "SMS": {
                             "dataType": "Boolean",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "WhatsApp": {
                             "dataType": "Boolean",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                   {
                         "SmsMessage": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },   
                                 {
                         "WPmessage": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                      
@@ -153,21 +153,21 @@
                         "insertedImage": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "isimage": {
                             "dataType": "Boolean",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     },
                     {
                         "entrySource": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "in"
+                            "direction": "out"
                         }
                     }            
                     
