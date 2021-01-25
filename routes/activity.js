@@ -100,7 +100,7 @@ exports.execute = function(req, res) {
 
     const accountSid = requestBody.accountSid;
     const authToken = requestBody.authToken;
-    const to = requestBody.to;
+    const to ='+91' requestBody.to;
    // const from = requestBody.messagingService;
     const sms =   requestBody.SMS;
     const whatsapp = requestBody.WhatsApp;
@@ -238,7 +238,7 @@ exports.execute = function(req, res) {
             body: smsMessage,
             statusCallback: "https://encwq9bqo98l04z.m.pipedream.net/",
             from: '+12526514589',
-            to: '+91' + to
+            to: to
         },
           function(err, responseData){
         if(!err) {
