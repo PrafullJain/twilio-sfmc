@@ -234,7 +234,7 @@ exports.execute = function (req, res) {
         client.messages
             .create({
                 body: smsMessage,
-                statusCallback: "https://encwq9bqo98l04z.m.pipedream.net/",
+                //statusCallback: "https://encwq9bqo98l04z.m.pipedream.net/",
                 from: '+12526514589',
                 to: to
             },
