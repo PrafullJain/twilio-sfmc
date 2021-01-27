@@ -15,7 +15,7 @@
     "arguments": {
         "execute": {
             "inArguments": [{
-                "email": "{{Contact.Attribute.TwilioDE.Email}}",
+                "email": "{{Contact.Default.Email}}",
                 "to": "{{Contact.Attribute.TwilioDE.TwilioNumber}}"
             }],
             "outArguments": [],
@@ -82,70 +82,70 @@
                         "accountSid": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "authToken": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "from": {
                             "dataType": "Phone",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "to": {
                             "dataType": "Phone",
                             "isNullable": false,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "MessageBody": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "email": {
                             "dataType": "Email",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "SMS": {
                             "dataType": "Boolean",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "WhatsApp": {
                             "dataType": "Boolean",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                   {
                         "SmsMessage": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },   
                                 {
                         "WPmessage": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                      
@@ -153,21 +153,21 @@
                         "insertedImage": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "isimage": {
                             "dataType": "Boolean",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     },
                     {
                         "entrySource": {
                             "dataType": "String",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     }            
                     
